@@ -7,10 +7,12 @@ empty:
 	echo "Type Something"
 
 repo:
-	gh repo create foundry-smart-contract-lottery --public --source=. --remote=origin
+	@echo "Enter repo name: "; \
+	read msg; \
+	gh repo create "$$msg" --public --source=. --remote=origin
 
 upload:
-	git push -u origin main
+	@git push -u origin main
 
 commit:
 	@echo "Enter commit message: "; \
