@@ -21,4 +21,8 @@ contract BasicNFT is ERC721 {
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
         return s_tokenIdToUri[tokenId];
     }
+
 }
+
+// Ranking of "NFT Metadata Decentralization"
+// SVG > IPFS >>>>>>> HTTPS
