@@ -47,6 +47,6 @@ install :
 
 # import {Script} from "lib/forge-std/src/Script.sol";
 # import {Raffle} from "../src/Raffle.sol";
-# 
+# find . -type f | grep -i "base64"
 
 #Variables can be used in makefile
