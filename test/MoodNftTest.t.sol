@@ -25,6 +25,15 @@ contract MoodNftTest is Test {
         console.log(moodNft.tokenURI(0));
     }
 
+        //debug this later
+
+    // function testFlipMoodIntegration() public {
+    //     vm.prank(USER);
+    //     moodNft.mintNft();
+    //     vm.prank(USER);
+    //     moodNft.flipMood(0);
+    //     assert(keccak256(abi.encodePacked(moodNft.tokenURI(0))) == keccak256(abi.encodePacked(SAD_SVG_URI)));
+    // }
     // you can deploy it to anvil, and get the nfts to your account
     // through metamask
 }

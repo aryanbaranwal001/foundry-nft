@@ -2,13 +2,23 @@
 pragma solidity ^0.8.0;
 
 import {Test, console} from "forge-std/Test.sol";
-import {DeployMoodNft} from "script/DeployMoodNft.s.sol";
+import {Script} from "forge-std/Script.sol";
 
-contract DeployMoodNftTest is Test {
+import {DeployMoodNft} from "script/DeployMoodNft.s.sol";
+import {MoodNft} from "../src/MoodNft.sol";
+
+contract DeployMoodNftTest is Test, Script {
     DeployMoodNft public deployer;
 
-    function setUp() public {
+    function setUp() public returns (MoodNft) {
         deployer = new DeployMoodNft();
+        string memory sadSvg = vm.readFile("./images/sad.svg");
+        string memory happySvg = vm.readFile("./images/happy.svg");
+
+        vm.startBroadcast();
+        MoodNft moodNft = new MoodNft(deployer.svgToImageURI(sadSvg), deployer.svgToImageURI(happySvg));
+        vm.stopBroadcast();
+        return moodNft;
     }
 
     function testConvertSvgToUri() public view {
