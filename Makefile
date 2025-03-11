@@ -43,6 +43,11 @@ deploy:
 install :
 	@forge install cyfrin/foundry-devops@0.2.2 --no-commit &&  forge install openzeppelin/openzeppelin-contracts@v5.0.2 --no-commit
 
+deployMood:
+	@forge script script/DeployMoodNft.s.sol:DeployMoodNft --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KEY) --broadcast
+
+# script for minting the moodNft
+# script for flipping the moodNft
 
 
 # import {Script} from "lib/forge-std/src/Script.sol";
