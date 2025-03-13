@@ -46,6 +46,14 @@ install :
 deployMood:
 	@forge script script/DeployMoodNft.s.sol:DeployMoodNft --rpc-url http://localhost:8545 --private-key $(DEFAULT_ANVIL_KEY) --broadcast
 
+decode:
+	@echo "Enter Function Signature: "; \
+	read msg; \
+	@echo "Enter Data"; \
+	read data; \	
+	@cast decode-abi "$$msg" "$$data" 
+
+	
 # script for minting the moodNft
 # script for flipping the moodNft
 
